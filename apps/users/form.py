@@ -17,4 +17,4 @@ class RegistForm(forms.Form):
     email = forms.EmailField(required=True)
     password = forms.CharField(required=True,min_length=5)#不能为空，不能少于5个
     #验证码
-    captcha = CaptchaField()
+    captcha = CaptchaField(error_messages={'invalid': '验证码错误'})
