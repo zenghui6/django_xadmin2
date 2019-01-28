@@ -47,6 +47,8 @@ class CustomBackend(ModelBackend):
         except Exception as e:
             return None
 
+        #git    版本控制尝试
+
 
 #注册,登录注册都是用的类
 class RegisterView(View):
