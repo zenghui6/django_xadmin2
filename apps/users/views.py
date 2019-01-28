@@ -5,9 +5,13 @@ from django.contrib.auth import login,authenticate
 from django.contrib.auth.backends import ModelBackend   #继承ModelBackend类
 from django.views.generic.base import View
 from django.db.models import Q
-from .form import LoginForm
+from .form import LoginForm,RegistForm
+#密码加密
+from django.contrib.auth.hashers import make_password
+#发送邮件
+from utils.email_send import send_register_eamil
 #?????为什么会出现这种情况咧？
-from users.models import  UserProfile
+from users.models import  UserProfile,EmailVerifyRecord
 #用户登录方法
 class LoginView(View):
     def get(self,request):
